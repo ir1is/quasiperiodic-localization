@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Normalni tight-binding model: kvadratna resetka, korak po korak.
+"""Normalni tight-binding model: kvadratna resetka.
 
 Pitanje: koje su dopustene energije i pripadajuce valne funkcije?
 Glavni postupak: sastavi H u bazi lokalnih orbitala i rijesi H psi = E psi.
@@ -12,27 +12,12 @@ Svaki par <i,j> u ovoj sumi brojimo jednom. Racunamo jedan spin.
 Jedna orbitala po mjestu; homogeni najblizi-susjedni hopping; a = 1.
 Periodicki rubovi: suprotni rubovi resetke su povezani.
 
-REFERENCE (otisnute stranice)
-  Simon, The Oxford Solid State Basics:
-    str. 101, (11.4): matrica za lanac;
-    str. 177, (16.1): E(k) = epsilon0 - 2*t*cos(kx*a) - 2*t*cos(ky*a).
-  Zhu, Bogoliubov-de Gennes Method and Its Applications:
-    str. 38, (2.3) ima hopping + lokalnu energiju + lokalni spinski clan.
-    Ovdje biramo spin-ocuvajuci NN hopping, epsilon_i = epsilon0 i Omega = 0.
-  Annett, Superconductivity, Superfluids and Condensates:
-    str. 138, (6.57): epsilon_k - mu je normalni dio BdG matrice.
-    Ovdje racunamo samo normalni model, s mu = 0; nema BdG racuna.
-
-POKRETANJE
-  python square_tb_osnove.py
-Potrebni paketi: numpy, matplotlib. Parametre mijenjaj odmah ispod importa.
-Skripta ispisuje rezultate i sprema square_tb_osnove.png pokraj ove datoteke.
 """
 
 from pathlib import Path
 
 import matplotlib
-matplotlib.use("Agg")  # Spremanje slike radi i na Padobranu, bez zaslona.
+matplotlib.use("Agg")  
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -45,11 +30,6 @@ epsilon0 = 0.0      # Jednaka lokalna energija na svakom mjestu.
 
 def izgradi_hamiltonijan(L, t, epsilon0):
     """h_ii = epsilon0; h_ij = -t za susjede; ostalo je nula."""
-    if L < 3:
-        raise ValueError("Za ovaj zapis periodickih veza koristi L >= 3.")
-    if t <= 0:
-        raise ValueError("U ovom uvodnom primjeru koristi t > 0.")
-
     N = L * L
     H = np.zeros((N, N))
 
