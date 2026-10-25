@@ -1,0 +1,11 @@
+0.2: normalni 2D tight binding; periodicki rubovi
+t=1.0; epsilon0=0.0; eta=0.12
+DOS je normiran po mjestu i po jednom spinu.
+
+L=10; N=100; Emin=-4.00000000; Emax=4.00000000; max|E_real-E_k|=7.327e-15; integral rho dE=1.0000000000
+L=20; N=400; Emin=-4.00000000; Emax=4.00000000; max|E_real-E_k|=1.998e-14; integral rho dE=1.0000000000
+L=30; N=900; Emin=-4.00000000; Emax=4.00000000; max|E_real-E_k|=2.531e-14; integral rho dE=1.0000000000
+
+CSV datoteke sadrze sve energije i izracunati DOS.
+Gaussovi repovi izvan pojasa nisu dodatna svojstvena stanja.
+Eta je ista za sve L; usporedba pri fiksnoj rezoluciji.
