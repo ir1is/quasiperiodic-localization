@@ -1,0 +1,142 @@
+{
+  "experiment": "Controlled separability breaking in 2D quasiperiodic tight binding",
+  "source": "Goncalves PhD thesis, Sec. 3.5.2, printed p. 115, Eq. (3.50)",
+  "created_utc": "2026-10-29T11:05:38.503942+00:00",
+  "parameters": {
+    "L": 21,
+    "V": 1.0,
+    "alpha": 0.5,
+    "couplings": [
+      0.0,
+      0.2,
+      1.0
+    ],
+    "solver": "dense",
+    "states": 64,
+    "sigma": 0.8,
+    "seed": 1701,
+    "phi_x": null,
+    "phi_y": null,
+    "emin": -3.0,
+    "emax": 6.0,
+    "eta": 0.08,
+    "save_eigenvectors": false,
+    "output": "C:\\Users\\Korisnik\\Desktop\\quasiperiodic-localization\\output\\1.1_bounded",
+    "phi_x_radians": 2.526301037527949,
+    "phi_y_radians": 1.9203494706328694,
+    "tau_numerator": 13,
+    "tau_denominator": 21,
+    "tau": 0.6190476190476191,
+    "N_sites": 441,
+    "hopping_matrix_element_over_t": 1.0,
+    "boundary_conditions": "Periodic in x and y; no boundary twist"
+  },
+  "validation": {
+    "status": "PASS",
+    "clean_spectrum_max_abs_error_t": 4.440892098500626e-15,
+    "separable_spectrum_max_abs_error_t": 6.394884621840902e-14,
+    "product_weight_max_abs_error": 1.1102230246251565e-15,
+    "plane_wave_ipr_max_abs_error": 8.881784197001252e-16,
+    "tensor_action_max_abs_error_t": 4.440892098500626e-16,
+    "symmetry_max_abs_error_t": 0.0,
+    "sparse_vs_dense_max_abs_error_t": 4.912736883966318e-15,
+    "phase_periodicity_max_abs_error_t": 8.704148513061227e-14,
+    "actual_pilot_product_spectrum_max_abs_error_t": 1.84297022087776e-14
+  },
+  "cases": [
+    {
+      "case_index": 0,
+      "Vprime_over_t": 0.0,
+      "solver": "Exact 1D product construction",
+      "spectrum_complete": true,
+      "returned_eigenpairs": 441,
+      "returned_energy_min_over_t": -1.7603356172835138,
+      "returned_energy_max_over_t": 6.462691305251262,
+      "states_in_plot_window": 420,
+      "solve_seconds": 0.01235629990696907,
+      "diagnostic_seconds": 0.08438989985734224,
+      "hamiltonian_nnz": 2205,
+      "hamiltonian_csr_bytes": 28228,
+      "max_relative_eigenpair_residual": 1.0936447663612919e-14,
+      "window_median_ipr_real": 0.006881068490270082,
+      "window_median_product_weight": 1.0,
+      "window_min_product_weight": 0.9999999999999982
+    },
+    {
+      "case_index": 1,
+      "Vprime_over_t": 0.2,
+      "solver": "Dense symmetric LAPACK eigh (evd)",
+      "spectrum_complete": true,
+      "returned_eigenpairs": 441,
+      "returned_energy_min_over_t": -1.7566187179937807,
+      "returned_energy_max_over_t": 6.474521053744031,
+      "states_in_plot_window": 420,
+      "solve_seconds": 0.3067789999768138,
+      "diagnostic_seconds": 0.042200599797070026,
+      "hamiltonian_nnz": 2205,
+      "hamiltonian_csr_bytes": 28228,
+      "max_relative_eigenpair_residual": 6.084225297064152e-15,
+      "window_median_ipr_real": 0.006580108043684185,
+      "window_median_product_weight": 0.5065023266978266,
+      "window_min_product_weight": 0.23587509955618413
+    },
+    {
+      "case_index": 2,
+      "Vprime_over_t": 1.0,
+      "solver": "Dense symmetric LAPACK eigh (evd)",
+      "spectrum_complete": true,
+      "returned_eigenpairs": 441,
+      "returned_energy_min_over_t": -1.7701406339598273,
+      "returned_energy_max_over_t": 6.5801855566141825,
+      "states_in_plot_window": 420,
+      "solve_seconds": 0.3854128001257777,
+      "diagnostic_seconds": 0.052389100193977356,
+      "hamiltonian_nnz": 2205,
+      "hamiltonian_csr_bytes": 28228,
+      "max_relative_eigenpair_residual": 6.139807522787276e-15,
+      "window_median_ipr_real": 0.007226610677139094,
+      "window_median_product_weight": 0.4794290966522771,
+      "window_min_product_weight": 0.1398636969610655
+    }
+  ],
+  "representative_states": [
+    {
+      "Vprime_over_t": 0.0,
+      "returned_state_index": 116,
+      "energy_over_t": 0.8162472808541779,
+      "ipr_real": 0.005606818749666847,
+      "product_weight": 0.9999999999999993
+    },
+    {
+      "Vprime_over_t": 1.0,
+      "returned_state_index": 120,
+      "energy_over_t": 0.7939381015947491,
+      "ipr_real": 0.006005877217840869,
+      "product_weight": 0.7502716611676905
+    }
+  ],
+  "dense_hamiltonian_bytes_if_allocated": 1555848,
+  "environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.1",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "pbs_job_id": null,
+    "blas_thread_settings": {
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    }
+  },
+  "script_sha256": "2a69d872dae30ed0f0e9985512e69aa51a103d8c355fa7ea4f924cd8866606d0",
+  "total_wall_seconds": 7.1628079996444285,
+  "limits": [
+    "One finite rational approximant and one phase configuration per run.",
+    "The product weight measures x/y factorization, not localization.",
+    "The alpha=1 potential is not clipped or bounded artificially.",
+    "The DOS uses the full spectrum only; a plotted energy window is not renormalized.",
+    "No critical-phase, level-statistics or thermodynamic conclusion is inferred from this pilot.",
+    "No magnetic field, electron-electron interaction or superconducting term is included."
+  ]
+}
